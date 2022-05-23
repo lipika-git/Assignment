@@ -12,7 +12,7 @@ import org.json.simple.parser.ParseException;
 
 public class App {
 	public static void main(String[] args) throws ParseException, IOException {
-
+		
 		JSONParser parser = new JSONParser();
 
 		Object obj = parser.parse(new FileReader("./src/main/java/Com/IPL/TeamRCB.json"));
@@ -30,7 +30,7 @@ public class App {
 
 		List<String> roles = new ArrayList<String>();
 		List<String> Countries = new ArrayList<String>();
-
+		//capturing all contries and roles of cricketers
 		for (int i = 0; i < player.size(); i++)
 
 		{
