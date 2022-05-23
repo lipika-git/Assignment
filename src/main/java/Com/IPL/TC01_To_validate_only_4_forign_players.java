@@ -10,7 +10,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class App {
+public class TC01_To_validate_only_4_forign_players {
 	public static void main(String[] args) throws ParseException, IOException {
 		
 		JSONParser parser = new JSONParser();
@@ -24,11 +24,10 @@ public class App {
 
 		JSONArray player = (JSONArray) jsonObject.get("player");
 
-		System.out.println("Name: " + name);
-		System.out.println("Course: " + course);
-		System.out.println("Player:");
+		//System.out.println("Name: " + name);
+		//System.out.println("Course: " + course);
+		//System.out.println("Player:");
 
-		List<String> roles = new ArrayList<String>();
 		List<String> Countries = new ArrayList<String>();
 		//capturing all contries and roles of cricketers
 		for (int i = 0; i < player.size(); i++)
@@ -36,17 +35,9 @@ public class App {
 		{
 			JSONObject innerobj = (JSONObject) player.get(i);
 
-			String r = (String) innerobj.get("role");
-			roles.add(r);
 
 			String c = (String) innerobj.get("country");
 			Countries.add(c);
-		}
-
-		if (roles.contains("Wicket-keeper")) {
-			System.out.println(name + " - has at least one Wicket Keeper");
-		} else {
-			System.out.println(name + " - Doesnot have one Wicket Keeper");
 		}
 
 		int counter = 0;
@@ -58,7 +49,7 @@ public class App {
 		if (counter == 4) {
 			System.out.println("Team has only 4 forgain players");
 		} else {
-			System.out.println("Team dont have 4 forgain players");
+			System.out.println("Team dont have only 4 forgain players");
 		}
 
 	}
